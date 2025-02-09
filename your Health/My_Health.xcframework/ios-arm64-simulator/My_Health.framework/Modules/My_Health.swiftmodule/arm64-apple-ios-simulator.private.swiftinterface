@@ -1,0 +1,27 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios17.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name My_Health
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import HealthKit
+@_exported import My_Health
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol HealthKitService {
+  func requestHealthKitPermissions(completion: @escaping (Swift.String) -> Swift.Void)
+  func fetchHealthData(completion: @escaping ([[Swift.String : Any]]) -> Swift.Void)
+}
+@_inheritsConvenienceInitializers @objc public class InternalHealthKit : ObjectiveC.NSObject, My_Health.HealthKitService {
+  @objc public func requestHealthKitPermissions(completion: @escaping ((Swift.String) -> Swift.Void))
+  @objc public func fetchHealthData(completion: @escaping ([[Swift.String : Any]]) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public class GetHealth {
+  public init(healthKitService: (any My_Health.HealthKitService)? = nil)
+  public func checkPermission(completion: @escaping (Swift.String) -> Swift.Void)
+  public func getHealthData(completion: @escaping ([[Swift.String : Any]]) -> Swift.Void)
+  @objc deinit
+}

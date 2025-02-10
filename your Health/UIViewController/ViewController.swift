@@ -27,7 +27,20 @@ class ViewController: UIViewController, DatePickerDelegate {
                         if fetchedData.count == 0 {
                             self.showAlert(title: "", message: "No Data Found.")
                         }else{
-                            self.data = fetchedData.sorted { $0["date"] as! String > $1["date"] as! String }
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "dd/MM/yy"  // Ensure this matches your date format in the data
+
+                            self.data = fetchedData.sorted {
+                                guard
+                                    let date1String = $0["date"] as? String,
+                                    let date2String = $1["date"] as? String,
+                                    let date1 = dateFormatter.date(from: date1String),
+                                    let date2 = dateFormatter.date(from: date2String)
+                                else {
+                                    return false
+                                }
+                                return date1 > date2  // Sort from today to the earliest date
+                            }
                             self.filteredData = self.data
                             self.tableView.reloadData()
                         }
@@ -49,15 +62,28 @@ class ViewController: UIViewController, DatePickerDelegate {
     @IBAction func filterButton(_ sender: UIButton) {
         let datePickerVC = DatePickerViewController()
         datePickerVC.delegate = self
-        datePickerVC.modalPresentationStyle = .pageSheet
+        datePickerVC.modalPresentationStyle = .popover
         present(datePickerVC, animated: true)
     }
 
-    func didSelectDate(_ date: String) {
-        if date.isEmpty {
+    func didSelectDateRange(startDate: String, endDate: String) {
+        if startDate.isEmpty && endDate.isEmpty {
+            // If both startDate and endDate are empty, show all data
             filteredData = data
         } else {
-            filteredData = data.filter { $0["date"] as? String == date }
+            // Filter data where the date falls between startDate and endDate
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yy"
+            
+            if let start = dateFormatter.date(from: startDate),
+               let end = dateFormatter.date(from: endDate) {
+                filteredData = data.filter {
+                    if let dateString = $0["date"] as? String, let date = dateFormatter.date(from: dateString) {
+                        return date >= start && date <= end
+                    }
+                    return false
+                }
+            }
         }
         tableView.reloadData()
     }

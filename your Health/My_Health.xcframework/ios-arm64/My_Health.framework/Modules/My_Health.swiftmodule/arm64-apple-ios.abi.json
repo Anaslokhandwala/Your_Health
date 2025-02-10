@@ -380,14 +380,12 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@My_Health@objc(cs)InternalHealthKit(im)requestHealthKitPermissionsWithCompletion:",
+            "usr": "s:9My_Health08InternalB3KitC07requestbD11Permissions10completionyySSc_tF",
             "mangledName": "$s9My_Health08InternalB3KitC07requestbD11Permissions10completionyySSc_tF",
             "moduleName": "My_Health",
             "isOpen": true,
-            "objc_name": "requestHealthKitPermissionsWithCompletion:",
             "declAttributes": [
               "AccessControl",
-              "ObjC",
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
@@ -487,14 +485,12 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@My_Health@objc(cs)InternalHealthKit(im)fetchHealthDataWithCompletion:",
+            "usr": "s:9My_Health08InternalB3KitC05fetchB4Data10completionyySaySDySSypGGc_tF",
             "mangledName": "$s9My_Health08InternalB3KitC05fetchB4Data10completionyySaySDySSypGGc_tF",
             "moduleName": "My_Health",
             "isOpen": true,
-            "objc_name": "fetchHealthDataWithCompletion:",
             "declAttributes": [
               "AccessControl",
-              "ObjC",
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
@@ -739,38 +735,26 @@
                 "kind": "TypeNominal",
                 "name": "InternalHealthKit",
                 "printedName": "My_Health.InternalHealthKit",
-                "usr": "c:@M@My_Health@objc(cs)InternalHealthKit"
+                "usr": "s:9My_Health08InternalB3KitC"
               }
             ],
             "declKind": "Constructor",
-            "usr": "c:@M@My_Health@objc(cs)InternalHealthKit(im)init",
+            "usr": "s:9My_Health08InternalB3KitCACycfc",
             "mangledName": "$s9My_Health08InternalB3KitCACycfc",
             "moduleName": "My_Health",
-            "overriding": true,
             "implicit": true,
-            "objc_name": "init",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Override"
-            ],
             "init_kind": "Designated"
           }
         ],
         "declKind": "Class",
-        "usr": "c:@M@My_Health@objc(cs)InternalHealthKit",
+        "usr": "s:9My_Health08InternalB3KitC",
         "mangledName": "$s9My_Health08InternalB3KitC",
         "moduleName": "My_Health",
         "isOpen": true,
         "declAttributes": [
-          "AccessControl",
-          "ObjC"
+          "AccessControl"
         ],
-        "superclassUsr": "c:objc(cs)NSObject",
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "ObjectiveC.NSObject"
-        ],
+        "hasMissingDesignatedInitializers": true,
         "conformances": [
           {
             "kind": "Conformance",
@@ -778,55 +762,6 @@
             "printedName": "HealthKitService",
             "usr": "s:9My_Health0B10KitServiceP",
             "mangledName": "$s9My_Health0B10KitServiceP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
       },
@@ -997,7 +932,7 @@
     {
       "filePath": "\/Users\/croma\/Desktop\/Goqii task\/Health App\/My_Health\/My_Health\/internalHealthKit.swift",
       "kind": "Array",
-      "offset": 285,
+      "offset": 269,
       "length": 2,
       "value": "[]"
     }

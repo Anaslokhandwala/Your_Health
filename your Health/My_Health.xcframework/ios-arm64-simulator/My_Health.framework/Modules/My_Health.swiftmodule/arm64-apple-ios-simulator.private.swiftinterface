@@ -13,10 +13,9 @@ public protocol HealthKitService {
   func requestHealthKitPermissions(completion: @escaping (Swift.String) -> Swift.Void)
   func fetchHealthData(completion: @escaping ([[Swift.String : Any]]) -> Swift.Void)
 }
-@_inheritsConvenienceInitializers @objc public class InternalHealthKit : ObjectiveC.NSObject, My_Health.HealthKitService {
-  @objc public func requestHealthKitPermissions(completion: @escaping ((Swift.String) -> Swift.Void))
-  @objc public func fetchHealthData(completion: @escaping ([[Swift.String : Any]]) -> Swift.Void)
-  @objc override dynamic public init()
+@_hasMissingDesignatedInitializers public class InternalHealthKit : My_Health.HealthKitService {
+  public func requestHealthKitPermissions(completion: @escaping ((Swift.String) -> Swift.Void))
+  public func fetchHealthData(completion: @escaping ([[Swift.String : Any]]) -> Swift.Void)
   @objc deinit
 }
 public class GetHealth {

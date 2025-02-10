@@ -8,13 +8,13 @@
 import Foundation
 import HealthKit
 
-@objc public class InternalHealthKit: NSObject, HealthKitService { // Conforming to protocol
+public class InternalHealthKit: HealthKitService { // Conforming to protocol
 
     let healthStore = HKHealthStore()
     var data: [[String: Any]] = []
     
     // MARK: - Request HealthKit Permissions
-    @objc public func requestHealthKitPermissions(completion:(@escaping (String) -> Void)) {
+    public func requestHealthKitPermissions(completion:(@escaping (String) -> Void)) {
         let healthDataToRead: Set = [
             HKObjectType.quantityType(forIdentifier: .stepCount)!,
             HKObjectType.quantityType(forIdentifier: .heartRate)!,
@@ -64,7 +64,7 @@ import HealthKit
 
     
     // MARK: - Fetch Health Data
-    @objc public func fetchHealthData( completion: @escaping ([[String:Any]]) -> Void) {
+    public func fetchHealthData( completion: @escaping ([[String:Any]]) -> Void) {
         getEarliestHealthDataDate { earliestDate in
             guard let startDate = earliestDate else {
                 completion([])
